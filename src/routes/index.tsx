@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/grandma-logo.png";
 import heroJars from "@/assets/hero-jars.jpeg";
-import pMango from "@/assets/product-mango.jpg";
-import pLemon from "@/assets/product-lemon.jpg";
-import pGarlic from "@/assets/product-garlic.jpeg";
-import pDrumstick from "@/assets/product-drumstick.jpg";
-import pGongura from "@/assets/product-gongura.jpeg";
-import pTomato from "@/assets/product-tomato.jpg";
-import pPuliyothare from "@/assets/product-puliyothare.jpeg";
+import pMango from "@/assets/product-mango.png";
+import pLemon from "@/assets/product-lemon.png";
+import pGarlic from "@/assets/product-garlic.png";
+import pDrumstick from "@/assets/product-drumstick.png";
+import pGongura from "@/assets/product-gongura.png";
+import pTomato from "@/assets/product-tomato.png";
+import pPuliyothare from "@/assets/product-puliyothare-new.jpeg";
+import pYam from "@/assets/product-yam.png";
 import aboutImg from "@/assets/about-cooking.jpg";
 
 export const Route = createFileRoute("/")({
@@ -25,7 +26,7 @@ const products = [
   { name: "Andhra Gongura", img: pGongura, tag: "Sorrel leaves, fiery & tangy" },
   { name: "Tomato Relish", img: pTomato, tag: "Tangy, comfort in a jar" },
   { name: "Temple Puliyothare", img: pPuliyothare, tag: "South Indian rice paste" },
-  { name: "Mixed Veg Pickle", img: pMango, tag: "A jar of nostalgia" },
+  { name: "Yam Pickle", img: pYam, tag: "Rare, earthy & rustic" },
 ];
 
 const trust = [
