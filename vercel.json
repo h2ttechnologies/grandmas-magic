@@ -1,5 +1,15 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": ".vercel/output"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/client/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/client/index.html"
+    }
+  ]
 }
