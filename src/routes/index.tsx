@@ -90,50 +90,55 @@ function Hero() {
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden">
       <img
         src={heroJars}
-        alt="Grandma's Magic homemade pickle jars in warm candlelight"
-        className="absolute inset-0 h-full w-full object-cover"
-        width={1080}
-        height={1080}
+        alt="Grandma's Magic homemade pickle jars arranged with traditional spices"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        style={{ filter: "blur(1px)" }}
+        width={1920}
+        height={960}
       />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)", opacity: 0.5 }} />
       <Header />
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 pt-32 sm:pt-40 pb-20 text-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 pt-32 sm:pt-40 pb-20 text-center">
         <img
           src={logo}
           alt="Grandma's Magic"
           width={120}
           height={120}
-          className="mx-auto mb-6 h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-brand-cream ring-4 ring-brand-yellow shadow-[var(--shadow-warm)]"
+          className="mx-auto mb-7 h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-brand-cream ring-4 ring-brand-yellow shadow-[var(--shadow-warm)]"
         />
-        <p className="text-brand-yellow font-semibold tracking-widest uppercase text-xs sm:text-sm mb-4">
-          ✨ Authentic · Handmade · Pan India ✨
+        <p className="text-brand-yellow font-medium tracking-[0.2em] uppercase text-[11px] sm:text-xs mb-5">
+          Authentic • Handmade • Available All Over India
         </p>
-        <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-brand-cream leading-[1.05] mb-5">
-          Homemade Pickles &amp; Podis
-          <span className="block text-brand-yellow italic font-medium text-3xl sm:text-5xl lg:text-6xl mt-2">
-            — just like paati makes 💛
+        <h1 className="font-display text-4xl sm:text-6xl lg:text-[4.5rem] font-black text-brand-cream leading-[1.1] mb-6 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
+          Homemade Pickles &amp; Podis,
+          <span className="block text-brand-yellow italic font-medium text-3xl sm:text-5xl lg:text-6xl mt-3">
+            Crafted with Love
           </span>
         </h1>
-        <p className="text-base sm:text-lg text-brand-cream/90 mb-8 max-w-2xl mx-auto">
-          Freshly prepared on order &nbsp;·&nbsp; No preservatives &nbsp;·&nbsp; 100% gingelly oil
+        <p className="font-display italic text-xl sm:text-2xl text-brand-cream/95 mb-5">
+          Just like Paati used to make 💛
+        </p>
+        <p className="text-sm sm:text-base text-brand-cream/85 mb-9 max-w-xl mx-auto leading-relaxed">
+          Freshly prepared for every order &nbsp;•&nbsp; No preservatives &nbsp;•&nbsp; Made with pure gingelly oil
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow px-7 py-4 text-base font-bold text-brand-brown shadow-[var(--shadow-warm)] hover:scale-105 active:scale-100 transition"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-yellow px-8 py-4 text-base font-bold text-brand-brown shadow-[0_0_40px_rgba(250,204,21,0.45),var(--shadow-warm)] ring-2 ring-brand-yellow/50 hover:scale-105 hover:shadow-[0_0_60px_rgba(250,204,21,0.6),var(--shadow-warm)] active:scale-100 transition"
           >
             <WhatsAppIcon className="h-5 w-5" /> Order on WhatsApp
           </a>
           <a
             href="#menu"
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-brand-cream/70 bg-transparent px-7 py-4 text-base font-bold text-brand-cream hover:bg-brand-cream hover:text-brand-brown transition"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-brand-cream/40 bg-white/5 backdrop-blur-sm px-7 py-4 text-base font-medium text-brand-cream hover:bg-brand-cream hover:text-brand-brown transition"
           >
             View Menu
           </a>
         </div>
-        <p className="mt-8 text-sm text-brand-cream/80">
+        <p className="mt-8 text-xs sm:text-sm text-brand-cream/75 tracking-wide">
           🚨 Fresh batch available today — limited stock
         </p>
       </div>
