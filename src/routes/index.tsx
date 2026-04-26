@@ -105,24 +105,43 @@ function Hero() {
           alt="Grandma's Magic"
           width={120}
           height={120}
-          className="mx-auto mb-7 h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-brand-cream ring-4 ring-brand-yellow shadow-[var(--shadow-warm)]"
+          className="hero-rise mx-auto mb-8 h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-brand-cream ring-4 ring-brand-yellow shadow-[var(--shadow-warm)]"
+          style={{ animationDelay: "0ms" }}
         />
-        <p className="text-brand-yellow font-medium tracking-[0.2em] uppercase text-[11px] sm:text-xs mb-5">
-          Authentic • Handmade • Available All Over India
+        <p
+          className="hero-rise text-brand-yellow font-medium tracking-[0.28em] uppercase text-[11px] sm:text-xs mb-6"
+          style={{ animationDelay: "120ms" }}
+        >
+          Authentic &nbsp;•&nbsp; Handmade &nbsp;•&nbsp; Available All Over India
         </p>
-        <h1 className="font-display text-4xl sm:text-6xl lg:text-[4.5rem] font-black text-brand-cream leading-[1.1] mb-6 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
-          Homemade Pickles &amp; Podis,
-          <span className="block text-brand-yellow italic font-medium text-3xl sm:text-5xl lg:text-6xl mt-3">
-            Crafted with Love
-          </span>
+        <h1
+          className="hero-rise font-display text-4xl sm:text-6xl lg:text-[4.25rem] font-bold text-brand-cream leading-[1.15] tracking-tight mb-5 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
+          style={{ animationDelay: "240ms" }}
+        >
+          Homemade Pickles &amp; Podis
         </h1>
-        <p className="font-display italic text-xl sm:text-2xl text-brand-cream/95 mb-5">
-          Just like Paati used to make 💛
+        <p
+          className="hero-rise font-display italic font-medium text-2xl sm:text-3xl lg:text-4xl text-brand-yellow mb-7 [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]"
+          style={{ animationDelay: "360ms" }}
+        >
+          Crafted with Care
         </p>
-        <p className="text-sm sm:text-base text-brand-cream/85 mb-9 max-w-xl mx-auto leading-relaxed">
-          Freshly prepared for every order &nbsp;•&nbsp; No preservatives &nbsp;•&nbsp; Made with pure gingelly oil
+        <p
+          className="hero-rise font-display italic text-lg sm:text-xl text-brand-cream/90 mb-5 font-normal"
+          style={{ animationDelay: "480ms" }}
+        >
+          Just like Paati used to make
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <p
+          className="hero-rise text-xs sm:text-sm tracking-wide text-brand-cream/80 mb-10 max-w-xl mx-auto leading-relaxed font-normal"
+          style={{ animationDelay: "600ms" }}
+        >
+          Freshly prepared &nbsp;•&nbsp; No preservatives &nbsp;•&nbsp; Pure gingelly oil
+        </p>
+        <div
+          className="hero-rise flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+          style={{ animationDelay: "720ms" }}
+        >
           <a
             href={WA_URL}
             target="_blank"
