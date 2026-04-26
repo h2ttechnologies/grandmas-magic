@@ -175,34 +175,34 @@ function Products() {
             Each jar is stirred slow, sealed fresh, and shipped with a little bit of paati's love.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((p) => (
             <article
               key={p.name}
-              className="group rounded-3xl bg-white overflow-hidden shadow-[var(--shadow-soft)] border border-border/60 flex flex-col hover:-translate-y-1 transition"
+              className="group rounded-3xl bg-white overflow-hidden shadow-[var(--shadow-warm)] border border-border/60 flex flex-col hover:-translate-y-1.5 hover:shadow-2xl transition duration-300"
             >
-              <div className="aspect-square overflow-hidden bg-brand-cream">
+              <div className="aspect-square overflow-hidden bg-brand-cream rounded-t-3xl">
                 <img
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
-                  width={500}
-                  height={500}
+                  width={1024}
+                  height={1024}
                   className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
                 />
               </div>
-              <div className="p-4 sm:p-5 flex flex-col flex-1">
-                <h3 className="font-display font-bold text-brand-brown text-base sm:text-lg leading-tight">
+              <div className="p-5 sm:p-6 flex flex-col flex-1 text-center">
+                <h3 className="font-display font-bold text-brand-brown text-lg sm:text-xl leading-tight">
                   {p.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1 flex-1">{p.tag}</p>
+                <p className="text-sm text-muted-foreground mt-1.5 flex-1">{p.tag}</p>
                 <a
                   href={WA_URL}
                   target="_blank"
                   rel="noopener"
-                  className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-brown px-4 py-2 text-xs sm:text-sm font-bold text-brand-cream hover:bg-brand-deep transition"
+                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[var(--shadow-soft)] hover:bg-[#1ebe5b] hover:scale-[1.03] active:scale-100 transition"
                 >
-                  <WhatsAppIcon className="h-3.5 w-3.5" /> Order Now
+                  <WhatsAppIcon className="h-4 w-4" /> Order Now
                 </a>
               </div>
             </article>
