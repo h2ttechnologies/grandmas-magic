@@ -217,7 +217,7 @@ function Menu() {
   const cats = [
     {
       title: "Pickles",
-      items: ["Mango", "Lemon", "Garlic", "Drumstick", "Andhra Gongura", "Tomato Relish", "Mixed Vegetable", "Inji (Ginger)"],
+      items: ["Mango", "Lemon", "Garlic", "Drumstick", "Andhra Gongura", "Tomato Relish", "Yam", "Inji (Ginger)"],
     },
     {
       title: "Rice Mixes & Pastes",
@@ -411,8 +411,19 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-brand-cream/15 text-center text-xs text-brand-cream/60">
-          © 2026 Grandma's Magic. All rights reserved.
+        <div className="mt-12 pt-6 border-t border-brand-cream/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-cream/70">
+          <p>© 2026 Grandma's Magic. All rights reserved.</p>
+          <p>
+            Crafted by{" "}
+            <a
+              href="https://h2t.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-yellow font-bold hover:underline"
+            >
+              H2T Technologies
+            </a>
+          </p>
         </div>
       </div>
     </footer>
