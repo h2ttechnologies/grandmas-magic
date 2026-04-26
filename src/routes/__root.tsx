@@ -36,13 +36,13 @@ export const Route = createRootRoute({
       { property: "og:description", content: "Authentic homemade pickles & podis made fresh with 100% gingelly oil. No preservatives. Just like paati makes 💛" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Grandma's Magic — Homemade Pickles & Podis" },
       { name: "twitter:description", content: "Authentic homemade pickles & podis made fresh with 100% gingelly oil. No preservatives. Just like paati makes 💛" },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2c159553-be05-4e5f-8133-93bb6283e2ab" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2c159553-be05-4e5f-8133-93bb6283e2ab" },
     ],
     links: [
+      { rel: "icon", href: "/logo.png" },
       {
         rel: "stylesheet",
         href: appCss,
