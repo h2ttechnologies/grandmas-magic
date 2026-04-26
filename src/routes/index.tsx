@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "@/assets/grandma-logo.png";
+const logo = "/grandma-logo.png";
+const heroJars = "/hero-jars.jpeg";
+const pMango = "/product-mango.png";
+const pLemon = "/product-lemon.png";
+const pGarlic = "/product-garlic.png";
+const pDrumstick = "/product-drumstick.png";
+const pGongura = "/product-gongura.png";
+const pTomato = "/product-tomato.png";
+const pPuliyothare = "/product-puliyothare-new.jpeg";
+const pYam = "/product-yam.png";
+const aboutImg = "/about-cooking.jpg";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import heroJars from "@/assets/hero-jars.jpeg";
-import pMango from "@/assets/product-mango.png";
-import pLemon from "@/assets/product-lemon.png";
-import pGarlic from "@/assets/product-garlic.png";
-import pDrumstick from "@/assets/product-drumstick.png";
-import pGongura from "@/assets/product-gongura.png";
-import pTomato from "@/assets/product-tomato.png";
-import pPuliyothare from "@/assets/product-puliyothare-new.jpeg";
-import pYam from "@/assets/product-yam.png";
-import aboutImg from "@/assets/about-cooking.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
