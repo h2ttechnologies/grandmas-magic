@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/grandma-logo.png";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import heroJars from "@/assets/hero-jars.jpeg";
 import pMango from "@/assets/product-mango.png";
 import pLemon from "@/assets/product-lemon.png";
@@ -170,15 +171,16 @@ function Trust() {
     <section className="bg-brand-cream py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {trust.map((t) => (
-            <div
-              key={t.title}
-              className="rounded-3xl bg-white p-6 text-center shadow-[var(--shadow-soft)] border border-border/60"
-            >
-              <div className="text-4xl mb-3">{t.icon}</div>
-              <h3 className="font-display font-bold text-brand-brown text-base sm:text-lg">{t.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{t.desc}</p>
-            </div>
+          {trust.map((t, idx) => (
+            <ScrollReveal key={t.title} delay={idx * 100} className="h-full">
+              <div className="h-full group cursor-default rounded-3xl bg-white p-6 text-center shadow-[var(--shadow-soft)] border border-border/60 hover:shadow-lg transition-all duration-300">
+                <div className="text-4xl mb-3 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]">
+                  {t.icon}
+                </div>
+                <h3 className="font-display font-bold text-brand-brown text-base sm:text-lg">{t.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{t.desc}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -190,7 +192,7 @@ function Products() {
   return (
     <section id="products" className="bg-brand-cream pb-20 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <ScrollReveal className="text-center mb-12">
           <p className="text-brand-pink font-semibold tracking-widest uppercase text-xs mb-3">Our Jars of Joy</p>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-brand-brown">
             Handcrafted in <span className="italic text-brand-pink">small batches</span>
@@ -198,38 +200,37 @@ function Products() {
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
             Each jar is stirred slow, sealed fresh, and shipped with a little bit of paati's love.
           </p>
-        </div>
+        </ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {products.map((p) => (
-            <article
-              key={p.name}
-              className="group rounded-3xl bg-white overflow-hidden shadow-[var(--shadow-warm)] border border-border/60 flex flex-col hover:-translate-y-1.5 hover:shadow-2xl transition duration-300"
-            >
-              <div className="aspect-square overflow-hidden bg-brand-cream rounded-t-3xl">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-              <div className="p-5 sm:p-6 flex flex-col flex-1 text-center">
-                <h3 className="font-display font-bold text-brand-brown text-lg sm:text-xl leading-tight">
-                  {p.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1.5 flex-1">{p.tag}</p>
-                <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener"
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[var(--shadow-soft)] hover:bg-[#1ebe5b] hover:scale-[1.03] active:scale-100 transition"
-                >
-                  <WhatsAppIcon className="h-4 w-4" /> Order Now
-                </a>
-              </div>
-            </article>
+          {products.map((p, idx) => (
+            <ScrollReveal key={p.name} delay={idx * 100} className="h-full">
+              <article className="h-full group rounded-3xl bg-white overflow-hidden shadow-[var(--shadow-warm)] border border-border/60 flex flex-col hover:-translate-y-1.5 hover:shadow-2xl transition duration-300">
+                <div className="aspect-square overflow-hidden bg-brand-cream rounded-t-3xl">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div className="p-5 sm:p-6 flex flex-col flex-1 text-center">
+                  <h3 className="font-display font-bold text-brand-brown text-lg sm:text-xl leading-tight">
+                    {p.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1.5 flex-1">{p.tag}</p>
+                  <a
+                    href={WA_URL}
+                    target="_blank"
+                    rel="noopener"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[var(--shadow-soft)] hover:bg-[#1ebe5b] hover:scale-[1.03] active:scale-100 transition"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" /> Order Now
+                  </a>
+                </div>
+              </article>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -252,36 +253,38 @@ function Menu() {
     <section id="menu" className="bg-brand-brown text-brand-cream py-20 sm:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, var(--brand-yellow) 0, transparent 40%), radial-gradient(circle at 80% 80%, var(--brand-pink) 0, transparent 40%)" }} />
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <ScrollReveal className="text-center mb-12">
           <p className="text-brand-yellow font-semibold tracking-widest uppercase text-xs mb-3">The Menu</p>
           <h2 className="font-display text-3xl sm:text-5xl font-bold">
             Paati's <span className="italic text-brand-yellow">special</span> menu
           </h2>
-        </div>
-        <div className="rounded-[2rem] bg-brand-cream text-brand-brown p-8 sm:p-12 shadow-[var(--shadow-warm)] border-4 border-brand-yellow/40">
-          <div className="grid sm:grid-cols-2 gap-10">
-            {cats.map((c) => (
-              <div key={c.title}>
-                <div className="flex items-center gap-3 mb-5 pb-3 border-b-2 border-dashed border-brand-pink/40">
-                  <span className="text-2xl">🪔</span>
-                  <h3 className="font-display text-2xl font-bold">{c.title}</h3>
+        </ScrollReveal>
+        <ScrollReveal delay={200}>
+          <div className="rounded-[2rem] bg-brand-cream text-brand-brown p-8 sm:p-12 shadow-[var(--shadow-warm)] border-4 border-brand-yellow/40">
+            <div className="grid sm:grid-cols-2 gap-10">
+              {cats.map((c) => (
+                <div key={c.title}>
+                  <div className="flex items-center gap-3 mb-5 pb-3 border-b-2 border-dashed border-brand-pink/40">
+                    <span className="text-2xl">🪔</span>
+                    <h3 className="font-display text-2xl font-bold">{c.title}</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {c.items.map((it) => (
+                      <li key={it} className="flex items-start justify-between gap-3 text-base">
+                        <span className="font-semibold">{it}</span>
+                        <span className="text-brand-pink text-sm flex-1 border-b border-dotted border-brand-brown/30 mx-2 mb-1.5" />
+                        <span className="text-sm text-muted-foreground">Fresh</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-3">
-                  {c.items.map((it) => (
-                    <li key={it} className="flex items-start justify-between gap-3 text-base">
-                      <span className="font-semibold">{it}</span>
-                      <span className="text-brand-pink text-sm flex-1 border-b border-dotted border-brand-brown/30 mx-2 mb-1.5" />
-                      <span className="text-sm text-muted-foreground">Fresh</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
+            <p className="text-center mt-10 text-sm text-muted-foreground italic">
+              Prices on WhatsApp · Custom orders welcome · Bulk discounts available
+            </p>
           </div>
-          <p className="text-center mt-10 text-sm text-muted-foreground italic">
-            Prices on WhatsApp · Custom orders welcome · Bulk discounts available
-          </p>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -291,7 +294,7 @@ function About() {
   return (
     <section id="about" className="bg-brand-cream py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="relative">
+        <ScrollReveal className="relative">
           <img
             src={aboutImg}
             alt="Paati hands stirring homemade pickle in a brass pot"
@@ -304,8 +307,8 @@ function About() {
             <p className="font-display text-2xl font-black leading-none">40+</p>
             <p className="text-xs font-semibold">years of recipes</p>
           </div>
-        </div>
-        <div>
+        </ScrollReveal>
+        <ScrollReveal delay={200}>
           <p className="text-brand-pink font-semibold tracking-widest uppercase text-xs mb-3">Our Story</p>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-brand-brown leading-tight">
             Recipes that smell like <span className="italic text-brand-pink">home</span>.
@@ -325,7 +328,7 @@ function About() {
               </span>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -335,30 +338,29 @@ function Reviews() {
   return (
     <section id="reviews" className="bg-[oklch(0.95_0.04_70)] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <ScrollReveal className="text-center mb-12">
           <p className="text-brand-pink font-semibold tracking-widest uppercase text-xs mb-3">Loved Across India</p>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-brand-brown">
             What our family says <span className="text-brand-pink">💌</span>
           </h2>
-        </div>
+        </ScrollReveal>
         <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="rounded-3xl bg-white p-6 sm:p-7 shadow-[var(--shadow-soft)] border border-border/60 relative"
-            >
-              <div className="text-brand-yellow text-2xl mb-2">★★★★★</div>
-              <blockquote className="text-brand-brown text-base leading-relaxed">"{t.text}"</blockquote>
-              <figcaption className="mt-5 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-brand-yellow/30 flex items-center justify-center font-display font-bold text-brand-brown">
-                  {t.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-bold text-brand-brown text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.city}</p>
-                </div>
-              </figcaption>
-            </figure>
+          {testimonials.map((t, idx) => (
+            <ScrollReveal key={t.name} delay={idx * 150} className="h-full">
+              <figure className="h-full rounded-3xl bg-white p-6 sm:p-7 shadow-[var(--shadow-soft)] border border-border/60 relative">
+                <div className="text-brand-yellow text-2xl mb-2">★★★★★</div>
+                <blockquote className="text-brand-brown text-base leading-relaxed">"{t.text}"</blockquote>
+                <figcaption className="mt-5 flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-brand-yellow/30 flex items-center justify-center font-display font-bold text-brand-brown">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-brand-brown text-sm">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.city}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -369,7 +371,7 @@ function Reviews() {
 function UrgentCTA() {
   return (
     <section className="relative py-20 sm:py-24 overflow-hidden" style={{ background: "var(--gradient-warm)" }}>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center text-brand-brown">
+      <ScrollReveal className="mx-auto max-w-4xl px-4 sm:px-6 text-center text-brand-brown">
         <p className="inline-block bg-brand-brown text-brand-yellow text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
           🚨 Limited Stock
         </p>
@@ -388,7 +390,7 @@ function UrgentCTA() {
           <WhatsAppIcon className="h-5 w-5" /> Reserve on WhatsApp
         </a>
         <p className="mt-4 text-sm text-brand-brown/80">+91 9176919919 · Pan India delivery</p>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
